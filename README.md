@@ -1,6 +1,4 @@
-# michaelbergmann.art
-Wordpress theme for http://www.michaelbergmann.art
+# swellstart.com
+Wordpress theme for http://swellstart.com/
 
 ## Getting started
-
-ssh chaelbe4@michaelbergmann.art

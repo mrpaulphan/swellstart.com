@@ -1,0 +1,95 @@
+/*
+ * LISTING STYLES
+ */
+
+.listing {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__category {
+    margin-bottom: 50px;
+  }
+
+  &__category-title {
+    display: inline-block;
+    padding-right: 20px;
+white-space: nowrap;
+    @include media('>large') {
+    }
+  }
+
+  &__hr {
+    width: 100%;
+    display: inline-flex;
+    height: 2px;
+    background-color: $link;
+  }
+
+  &__year {
+    @include font($openSans, normal, normal);
+    color: $primaryAccent;
+    font-size: 18px;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 25px;
+    align-items: center;
+
+    @include media('>large') {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      display: flex;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__thumbnail {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+
+    @include media('>large') {
+      margin-bottom: 0;
+    }
+
+    &.empty {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: $link;
+
+      @include media('>large') {}
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__excerpt {
+    margin-bottom: 10px;
+  }
+
+  &__cta {
+    color: $link;
+  }
+
+  &__content {
+    padding-left: 20px;
+    flex: 1;
+  }
+}

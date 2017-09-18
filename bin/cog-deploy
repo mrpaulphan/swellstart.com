@@ -1,0 +1,26 @@
+#!/bin/bash
+#!/bin/bash
+
+set -e
+
+if [ -e .env ]; then
+    source ./.env
+fi
+
+ARG_DIR=${DOCUMENT_ROOT:-./}
+
+ while true ; do
+     case "$1" in
+         -d|--dir)
+               case "$2" in
+                 "") ARG_DIR='./' ; shift 2 ;;
+                 *) ARG_DIR=$2 ; shift 2 ;;
+               esac ;;
+         --) shift ; break ;;
+         "") break ;;
+     esac
+ done
+
+rsync -avzh --exclude-from=exclude_file.txt "$PWD"/public ssh chaelbe4@michaelbergmann.art:/home4/chaelbe4/public_html
+
+echo '✨ Sync Complete'

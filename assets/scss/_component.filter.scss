@@ -1,0 +1,51 @@
+/*
+ * FILTER STYLES
+ */
+.filter {
+  padding-bottom: 50px;
+
+  ul {
+    display: block;
+  }
+
+  &__item {
+    font-size: 12px;
+    display: inline-flex;
+
+    @include media('>large') {
+      font-size: 18px;
+    }
+
+    &--label {
+      @include font($openSans, 600, normal);
+      color: $primary;
+      display: inline-flex;
+      text-transform: uppercase;
+      padding-right: 10px;
+      font-size: 12px;
+
+
+      @include media('>large') {
+        padding-right: 20px;
+        font-size: 18px;
+
+       }
+    }
+  }
+
+  &__link {
+    @include font($openSans, 600, normal);
+    display: block;
+    color: $link;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding-right: 10px;
+
+    @include media('>large') {
+      font-size: 18px;
+      padding-right: 20px;
+
+    }
+  }
+}

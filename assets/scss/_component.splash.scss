@@ -1,0 +1,123 @@
+/*
+ * SPLASH PAGE STYLES
+ */
+.splash {
+  background-color: $black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+    padding-bottom: 0;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+  }
+
+  &__carousel {
+    height: 100%;
+    //  display: none;
+    &.slick-slider {
+      display: block;
+    }
+
+    .slick-arrow {
+      display: none!important;
+    }
+  }
+
+  .slick-list {
+    height: 100%;
+  }
+
+  .slick-track {
+    height: 100%;
+  }
+
+  &__slide {
+    color: $white;
+    position: relative;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.slick-slide {
+      display: flex;
+      align-items: center;
+    }
+
+    &.slick-current {
+        animation-name: fadeInAndOut;
+        animation-duration: 13s;
+        animation-fill-mode: forwards;
+
+      .splash__quote {
+        animation-name: fadeInUp;
+        animation-delay: 5s;
+        animation-duration: 13s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &__slide-content {}
+
+  &__quote {
+    @include font($merriweather, bold, italic);
+    font-size: 32px;
+    line-height: 1.2;
+    opacity: 0;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+
+    @include media('>large') {
+      width: 60%;
+      font-size: 54px;
+    }
+  }
+
+  &__source {
+    @include font($openSans, normal, normal);
+    font-size: 18px;
+    margin-top: 20px;
+    color: $primary;
+    display: block;
+
+    @include media('>large') {
+      font-size: 32px;
+    }
+  }
+
+  &__cta {
+    @include font($merriweather, normal, normal);
+    color: $primary;
+    font-size: 33px;
+    display: block;
+    text-align: right;
+
+    @include media('>large') {
+      font-size: 60px;
+    }
+
+    svg {
+      fill: $primary;
+      height: 20px;
+      width: auto;
+    }
+  }
+
+  .content {
+    padding-top: 0;
+  }
+
+  .footer__content {
+    background: red;
+    display: none;
+  }
+}

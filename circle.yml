@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: 4.2.6
+  php:
+    version: 7.0.4
+dependencies:
+  cache_directories:
+    - "node_modules"
+  pre:
+    - npm install -g hc-cog
+  post:
+    - npm install
+test:
+  override:
+    - echo "YOLO"
+deployment:
+  production:
+    branch: master
+    commands:
+      - cog staging

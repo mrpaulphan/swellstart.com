@@ -1,0 +1,88 @@
+/*
+ * QUOTES STYLES
+ */
+.quotes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quote {
+  width: 100%;
+  margin-bottom: 50px;
+
+  @include media('>large') {
+    width: 50%;
+  }
+
+  &__text {
+    @include font($merriweather, bold, italic);
+    color: $primaryAccent;
+    font-size: 35px;
+     line-height: 45px;
+
+    @include media('>large') {
+      font-size: 35px;
+      line-height: 55px;
+    }
+  }
+
+  &__link {
+    @include font($openSans, normal, italic);
+    color: $link;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 15px;
+    display: block;
+  }
+
+  &__source {
+    @include font($merriweather, normal, normal);
+    display: block;
+    color: $helperText;
+    font-size: 20px;
+    margin-top: 15px;
+
+    @include media('>large') {
+      font-size: 27px;
+       margin-top: 0px;
+    }
+    &--small {
+      @include media('>large') {
+        display: none;
+       }
+    }
+    &--large {
+      display: none;
+      @include media('>large') {
+        display: inline-block;
+       }
+    }
+  }
+
+  &:nth-child(odd) {
+    @include media('>large') {
+      padding-right: 4%;
+      padding-left: 4%;
+    }
+  }
+
+  &:nth-child(even) {
+    @include media('>large') {
+      padding-left: 4%;
+      padding-right: 4%;
+      margin-top: 40px;
+    }
+  }
+
+  &__hanging {
+    color: $primary;
+
+    &--left {
+      margin-left: -15px;
+    }
+
+    &--riight {
+      margin-right: -15px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+h1 {
+  @include font($merriweather, normal, normal);
+  font-size: 40px;
+  color: $link;
+}
+
+h2 {
+  @include font($merriweather, bold, italic);
+  font-size: 30px;
+  color: $primaryAccent;
+}
+
+h3 {
+  @include font($merriweather, normal, normal);
+  font-size: 24px;
+  color: $primary;
+}
+
+strong {
+  @include font($openSans, bold, normal);
+}
+
+p {
+  @include font($openSans, normal, normal);
+  font-size: 18px;
+  line-height: 26px
+}

@@ -6,43 +6,5 @@ https://impactsix.com/
 
 *************************************************
 */
-
-// Dependices
-$showMediaQueryPreview: true;
-
-@import 'normalize';
-@import 'include-media';
-@import 'vendor.slick.scss';
-@import 'vendor.slick-theme.scss';
-
-// Config
-@import 'config.variables';
-@import 'config.media-queries';
-
-// General
-@import 'general.reset';
-
-
-
-// library
-@import 'library.animate';
-@import 'library.mixin';
-@import 'general.typography';
-@import 'component.longform';
-
-// Layout
-@import 'layout';
-
-// Module
-@import 'component.header';
-@import 'component.footer';
-@import 'component.navigation';
-@import 'component.quotes';
-@import 'component.gallery';
-@import 'component.splash';
-@import 'component.posts';
-@import 'component.announcement';
-@import 'component.listing';
-@import 'component.breadcrumbs';
-@import 'component.filter';
-@import 'component.slick';
+@import 'general.animate';
+@import 'general.orginal';

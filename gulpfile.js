@@ -41,11 +41,7 @@ gulp.task('styles', function() {
     .pipe(plumber())
     .pipe(scss({
       style: 'compressed',
-      precision: 5,
-      includePaths: [
-        'node_modules/include-media/dist',
-        'node_modules/normalize.css',
-      ]
+      precision: 5
     }))
     .pipe(autoprefixer({
       browsers: ['last 2 version', 'ie 11'],
@@ -56,31 +52,19 @@ gulp.task('styles', function() {
 });
 
 /*
- *  Scripts Task
- */
-gulp.task('scripts', function() {
-  gulp.src(paths.js.src)
-    .pipe(plumber())
-    .pipe(browserify())
-    .pipe(gulp.dest(paths.js.dest));
-});
-
-/*
  *  Copy Task
  */
 
 gulp.task('sync', shell.task([
   'echo "Deleting up public theme folder..."',
-  'rm -rf public/wp-content/themes/michaelbermann/*',
-  'echo "Copying slick files..."',
-  'cp -rf assets/css/ theme/dist/css',
+  'rm -rf public/wp-content/themes/swell/*',
   'echo "Copying fonts..."',
   'rm -rf theme/dist/fonts',
   'mkdir -p theme/dist/fonts',
   'cp -rf assets/fonts theme/dist/fonts',
   'echo Copying themes folder to public...',
-  'mkdir -p public/wp-content/themes/michaelbermann',
-  'cp -rf theme/* public/wp-content/themes/michaelbermann',
+  'mkdir -p public/wp-content/themes/swell',
+  'cp -rf theme/* public/wp-content/themes/swell',
   'echo "✨ Finished gulp sync"',
 ]));
 /*
@@ -88,7 +72,6 @@ gulp.task('sync', shell.task([
  */
 gulp.task('watch', function() {
   gulp.watch(paths.scss.src, ['styles', 'sync']);
-  gulp.watch(paths.js.src, ['scripts', 'sync']);
   gulp.watch('theme/**/*.php', ['sync']);
 });
 
@@ -96,4 +79,4 @@ gulp.task('watch', function() {
  *  Build Task
  */
 gulp.task('default', ['production', 'watch']);
-gulp.task('production', ['styles', 'scripts', 'sync']);
+gulp.task('production', ['styles', 'sync']);

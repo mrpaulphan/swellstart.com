@@ -134,7 +134,14 @@ function post_type_client()
 }
 add_action('init', 'post_type_client');
 
-
+/*
+ * Allow svg files
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 /*
  * ACF Pro Functions
  */

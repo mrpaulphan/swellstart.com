@@ -7,40 +7,17 @@
   </head>
 
 </head>
-  <body>
+  <body class="<?php echo is_user_logged_in() ?'is-logged-in' : '' ; ?>">
     <nav class="open">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="connect.html">Connect</a></li>
-        </ul>
+        <?php wp_nav_menu( array('menu' => 'Header') ); ?>
+        <?php $logo = get_field('logo', 'option'); ?>
+        <?php $facebook = get_field('facebook_icon', 'option'); ?>
+        <?php $twitter = get_field('twitter_icon', 'option'); ?>
+
         <p class="social">
-            <a href="https://twitter.com/swellees" target="_blank"><img src="images/social-twitter-white.png"></a>
-            <a href="https://www.facebook.com/swellbook" target="_blank"><img src="images/social-facebook-white.png"></a>
+            <a href="<?php the_field('twitter', 'option') ?>" target="_blank"><img src="<?php echo $twitter['url']; ?>"></a>
+            <a href="<?php the_field('facebook', 'option') ?>" target="_blank"><img src="<?php echo $facebook['url']; ?>"></a>
         </p>
-        <p class="logo"><img class="no-fade" src="images/swell-logo.png" alt="Swell" /></p>
+        <p class="logo"><img class="no-fade" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['title']; ?>" /></p>
     </nav>
     <h1 class="visually-hidden">Swell</h1>
-    <div class="mobile-only">
-      <a href="about.html">
-          <div class="block ">
-              <figure class="height_375">
-                  <img src="images/home/cssc3.png" alt="" />
-              </figure>
-          </div>
-      </a>
-    </div>
-
-        <!-- <?php wp_nav_menu(
-          array(
-          'theme_location' => 'header-menu',
-          'menu_class' => 'nav__items',
-          'container' => 'nav',
-          'container_class' => 'nav nav--main',
-          )
-        );?>
-
-            ./header
-            <div class="content" id="content">
-         -->

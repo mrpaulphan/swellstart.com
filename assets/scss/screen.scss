@@ -7,4 +7,15 @@ https://impactsix.com/
 *************************************************
 */
 @import 'general.animate';
-@import 'general.orginal';
+@import 'general.original';
+/**
+ * Impact Six Overwrite Styles
+ */
+body {
+  position: relative;
+}
+
+nav {
+  z-index: 1;
+  top: -175px;
+}

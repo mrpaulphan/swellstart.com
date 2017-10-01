@@ -33,10 +33,8 @@ function my_remove_admin_menus() {
 
 
 
-add_action( 'admin_menu', 'impact_six_change_post_menu_label' );
-
-
-add_action( 'init', 'impact_six_change_post_object_label' );
+//add_action( 'admin_menu', 'impact_six_change_post_menu_label' );
+//add_action( 'init', 'impact_six_change_post_object_label' );
 function impact_six_change_post_menu_label() {
 	global $menu;
 	global $submenu;
@@ -65,22 +63,21 @@ function impact_six_change_post_object_label() {
  * Custom Post type
  */
 
-
-function post_type_team()
+function post_type_work()
 {
     $labels = array(
-        'name' => 'Clients',
-        'singular_name' => 'Client',
-        'menu_name' => 'Client',
-        'name_admin_bar' => 'client',
+        'name' => 'Works',
+        'singular_name' => 'Work',
+        'menu_name' => 'Work',
+        'name_admin_bar' => 'work',
         'add_new' => 'Add New',
-        'add_new_item' => 'Add client',
-        'new_item' => 'New client',
-        'edit_item' => 'Edit client',
-        'view_item' => 'View client',
-        'all_items' => 'All clients',
-        'search_items' => 'Search clients',
-        'parent_item_colon' => 'Parent clients:',
+        'add_new_item' => 'Add work',
+        'new_item' => 'New work',
+        'edit_item' => 'Edit work',
+        'view_item' => 'View work',
+        'all_items' => 'All works',
+        'search_items' => 'Search works',
+        'parent_item_colon' => 'Parent works:',
         'not_found' => 'No projects found.',
         'not_found_in_trash' => 'No projects found in Trash.',
     );
@@ -88,17 +85,19 @@ function post_type_team()
     $args = array(
         'labels' => $labels,
         'public' => true,
-        'rewrite' => array('slug' => 'clients'),
+        'rewrite' => array('slug' => 'work'),
         'has_archive' => false,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-gallery',
         //'menu_icon' => get_stylesheet_directory_uri() . '/functions/panel/images/catchinternet-small.png',
-        //'taxonomies' => array('post_tag', 'category'),
-        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),
+        'taxonomies' => array('post_tag', 'category'),
+        'supports' => array('title'),
+
     );
-    register_post_type('photos', $args);
+    register_post_type('works', $args);
 }
-add_action('init', 'post_type_team');
+add_action('init', 'post_type_work');
+
 
 function post_type_client()
 {
@@ -127,7 +126,7 @@ function post_type_client()
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-gallery',
         //'menu_icon' => get_stylesheet_directory_uri() . '/functions/panel/images/catchinternet-small.png',
-        //'taxonomies' => array('post_tag', 'category'),
+        'taxonomies'          => array( 'category' ),
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),
     );
     register_post_type('photos', $args);
@@ -154,3 +153,5 @@ if (function_exists('acf_add_options_page')) {
         'redirect' => false,
     ));
 }
+
+add_theme_support( 'post-thumbnails' );

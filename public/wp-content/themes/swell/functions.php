@@ -89,10 +89,8 @@ function post_type_work()
         'has_archive' => false,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-gallery',
-        //'menu_icon' => get_stylesheet_directory_uri() . '/functions/panel/images/catchinternet-small.png',
         'taxonomies' => array('post_tag', 'category'),
         'supports' => array('title'),
-
     );
     register_post_type('works', $args);
 }
@@ -126,10 +124,10 @@ function post_type_client()
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-gallery',
         //'menu_icon' => get_stylesheet_directory_uri() . '/functions/panel/images/catchinternet-small.png',
-        'taxonomies'          => array( 'category' ),
+        'taxonomies'          => array( '' ),
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),
     );
-    register_post_type('photos', $args);
+    register_post_type('teams', $args);
 }
 add_action('init', 'post_type_client');
 

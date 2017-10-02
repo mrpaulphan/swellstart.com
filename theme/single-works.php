@@ -18,8 +18,8 @@
                             <ul class="filters ">
                               <?php
                               $args = array( 'post_type' => 'works', 'posts_per_page' => -1 );
-                              $loop = new WP_Query( $args );
-                              while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                              $client = new WP_Query( $args );
+                              while ( $client->have_posts() ) : $client->the_post(); ?>
                                 <?php if (!get_field('is_call_to_action_block')): ?>
                                   <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                                 <?php endif; ?>
@@ -33,8 +33,8 @@
                     <ul>
                     <?php
                     $args = array( 'post_type' => 'works', 'posts_per_page' => -1,'cat' => $category->term_id );
-                    $loop = new WP_Query( $args );
-                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                    $works = new WP_Query( $args );
+                    while ( $works->have_posts() ) : $works->the_post(); ?>
                       <?php if (!get_field('is_call_to_action_block')): ?>
                         <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                       <?php endif; ?>
@@ -44,6 +44,8 @@
                  <?php endforeach; ?>
             </div>
         </div>
+        <!-- /.nav-filter-outer -->
+        <?php if ( have_posts() ) : the_post(); ?>
         <div class="work-intro">
             <h1><?php the_title(); ?></h1>
             <?php the_field('intro'); ?>
@@ -53,18 +55,27 @@
                 <?php endforeach; ?>
             </ul>
         </div>
+        <!-- /.work-intro -->
         <?php if (have_rows('body_enhanced')): ?>
-asdfjajfl;kajs;lkfj
           <?php while ( have_rows('body_enhanced') ) : the_row(); ?>
             <?php if( get_row_layout() == 'text' ): ?>
               <?php the_sub_field('text_block'); ?>
             <?php elseif( get_row_layout() == 'image' ): ?>
               <?php $image = get_sub_field('image_block'); ?>
-              <figure class="work-image-wrap width-1000 wow fadeInUp"  data-wow-delay="0s" data-wow-duration="2s">
+              <figure class="work-image-wrap width-<?php echo get_sub_field('max_width'); ?> wow fadeInUp"  data-wow-delay="0s" data-wow-duration="2s">
                   <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ? $image['alt'] : $image['title']  ?>" />
               </figure>
+            <?php elseif( get_row_layout() == 'video' ): ?>
+              <?php $video = get_sub_field('video_block'); ?>
+              <div class="work-image-wrap width-1000 wow fadeInUp" data-wow-delay=".5s" data-wow-duration="2s">
+                <video width="100%" controls <?php echo get_sub_field('auto_start') ? 'autoplay' : '' ;?>>
+                  <source src="<?php echo $video['url']; ?>" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             <?php endif; ?>
           <?php endwhile; ?>
         <?php endif; ?>
+      <?php endif; ?>
     </div>
 <?php get_footer(); ?>

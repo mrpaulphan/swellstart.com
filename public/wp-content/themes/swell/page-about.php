@@ -31,7 +31,8 @@ if( $fields ): ?>
                 $loop = new WP_Query( $args );
                 $i = 2;
                 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                <img data-img-<?php echo $i; ?> src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" />
+                  <?php $thumb = get_field('thumbnail'); echo "<pre>";?>
+                <img data-img-<?php echo $i; ?> src="<?php echo $thumb['url']; ?>" alt="<?php echo the_title(); ?>" />
                 <?php $i++; endwhile; ?>
             </div>
             <div class="thumb-row">

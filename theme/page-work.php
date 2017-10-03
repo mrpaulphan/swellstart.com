@@ -21,17 +21,12 @@ if( have_rows('category') ):
        'category_id' => $category_relationship,
        'category_name' => get_cat_name($category_relationship),
        'highlighted_word' => $highlighted_word,
-       'non_highlighted_word' => $non_highlighted_word
+       'non_highlighted_word' => $non_highlighted_word,
      ];
  endwhile;
 endif;
 $count = count($category_array);
-$count_half = $count/2;
-echo "<pre>";
- var_dump($category_array);
- echo "</pre>";
-
-
+$count_half = ceil($count/2);
 ?>
 
 <div class="work-wrap">
@@ -50,119 +45,37 @@ echo "<pre>";
         <div class="work-body">
             <h2>– But Wait, There's More –</h2>
             <p class="intro">See what else we’ve done</p>
-            <ul class="list-1 work-list">
-                <li><p><span>Browse</span> through <span>Branding</span></p>
-                    <div class="filter-content" data-branding>
-                        <ul>
-                            <li><a href="cps.html">Community Partnership School</a></li>
-                            <li><a href="east-girard.html">East Girard</a></li>
-                            <li><a href="glades-pike-winery.html">Glades Pike Winery</a></li>
-                            <li><a href="mazza.html">Mazza Vineyards</a></li>
-                            <li><a href="northern-childrens-services.html">Northern Children's Services</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="philadelphia-collection.html">The Philadelphia Collection</a></li>
-                            <li><a href="punk-burger.html">P'unk Burger</a></li>
-                            <li><a href="slice.html">Slice</a></li>
-                            <li><a href="trios.html">Trios</a></li>
-                        <li><a href="cooperative.html">The Wilds Cooperative of Pennsylvania</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><p><span>Peek</span> at <span>Planning</span></p>
-                    <div class="filter-content" data-planning>
-                        <ul>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="valley-forge.html">Valley Forge</a></li>
-                            <li><a href="mazza.html">Mazza Vineyards</a></li>
-                            <li><a href="peddlers-village.html">Peddler's Village</a></li>
-                            <li><a href="wharton.html">Wharton Executive Education</a></li>
-                        <li><a href="cooperative.html">The Wilds Cooperative of Pennsylvania</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><p><span>Review</span> some <span>Advertising</span></p>
-                    <div class="filter-content" data-advertising>
-                        <ul>
-                            <li><a href="bernie-robbins.html">Bernie Robbins</a></li>
-                            <li><a href="blue-plate-minds.html">Blue Plate Minds</a></li>
-                            <li><a href="peddlers-village.html">Peddler's Village</a></li>
-                            <li><a href="pa-ballet.html">Pennsylvania Ballet</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="petplan.html">Petplan</a></li>
-                            <li><a href="philadelphia-collection.html">The Philadelphia Collection</a></li>
-                            <li><a href="trios.html">Trios</a></li>
-                            <li><a href="wharton.html">Wharton Executive Education</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><p><span>Dive in</span> to some <span>Content</span></p>
-                    <div class="filter-content" data-content>
-                        <ul>
-                            <li><a href="mazza-vineyards.html">Mazza Vineyards</a></li>
-                            <li><a href="valley-forge.html">Valley Forge</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-2 work-list">
-                <li><p><span>Peruse</span> through <span>Web + Interactive</span></p>
-                    <div class="filter-content" data-website>
-                        <ul>
-                            <li><a href="blue-plate-minds.html">Blue Plate Minds</a></li>
-                            <li><a href="east-girard.html">East Girard</a></li>
-                            <li><a href="glades-pike-winery.html">Glades Pike Winery</a></li>
-                            <li><a href="mazza-vineyards.html">Mazza Vineyards</a></li>
-                            <li><a href="northern-childrens-services.html">Northern Children's Services</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="petplan.html">Petplan</a></li>
-                            <li><a href="philadelphia-collection.html">The Philadelphia Collection</a></li>
-                            <li><a href="punk-burger.html">P'unk Burger</a></li>
-                            <li><a href="slice.html">Slice</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><p><span>Check out</span> some <span>Research</span></p>
-                    <div class="filter-content" data-research>
-                        <ul>
-                            <li><a href="bernie-robbins.html">Bernie Robbins</a></li>
-                            <li><a href="cps.html">Community Partnership School</a></li>
-                            <li><a href="east-girard.html">East Girard</a></li>
-                            <li><a href="northern-childrens-services.html">Northern Children's Services</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="petplan.html">Petplan</a></li>
-                            <li><a href="slice.html">Slice</a></li>
-                            <li><a href="valley-forge.html">Valley Forge</a></li>
-                            <li><a href="wharton.html">Wharton Executive Education</a></li>
-                        <li><a href="cooperative.html">The Wilds Cooperative of Pennsylvania</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><p><span>Page</span> through <span>Print Collateral</span></p>
-                    <div class="filter-content" data-collateral>
-                        <ul>
-                            <li><a href="cps.html">Community Partnership School</a></li>
-                            <li><a href="east-girard.html">East Girard</a></li>
-                            <li><a href="glades-pike-winery.html">Glades Pike Winery</a></li>
-                            <li><a href="mazza-vineyards.html">Mazza Vineyards</a></li>
-                            <li><a href="northern-childrens-services.html">Northern Children's Services</a></li>
-                            <li><a href="peddlers-village.html">Peddler&rsquo;s Village</a></li>
-                            <li><a href="pa-ballet.html">Pennsylvania Ballet</a></li>
-                            <li><a href="prps.html">Pennsylvania Parks and Recreation</a></li>
-                            <li><a href="pa-wine.html">Pennsylvania Winery Association</a></li>
-                            <li><a href="petplan.html">Petplan</a></li>
-                            <li><a href="philadelphia-collection.html">The Philadelphia Collection</a></li>
-                            <li><a href="punk-burger.html">P'unk Burger</a></li>
-                            <li><a href="slice.html">Slice</a></li>
-                            <li><a href="trios.html">Trios</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+						 <?php $i = 0; foreach ($category_array as $key => $category): ?>
+							 <?php if ($i == 0): ?>
+								<ul class="list-1 work-list">
+							 <?php endif; ?>
+
+							 <li class="">
+								 <p><span><?php echo $category['highlighted_word'] ?></span> <?php echo $category['non_highlighted_word'];  ?> <span><?php echo $category['category_name'] ?></span></p>
+                   <div class="filter-content" data-<?php echo $category['category_id']  ?>>
+                      <ul>
+                        <?php
+
+                        $args = array( 'post_type' => 'works', 'posts_per_page' => -1, 'cat'=> (int)$category['category_id'] );
+                        $posts = new WP_Query( $args );
+                        while ( $posts->have_posts() ) : $posts->the_post(); ?>
+                        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                      <?php   endwhile;
+                         ?>
+                      </ul>
+                   </div>
+               </li>
+							 <?php $i++; ?>
+							 <?php if ($i ==  $count_half): ?>
+							 </ul>
+								 <ul class="list-2 work-list">
+							 <?php endif; ?>
+
+							 <?php if ($i == $count): ?>
+							 </ul>
+							 <?php endif; ?>
+						 <?php endforeach; ?>
+
         </div>
     </div>
 </div>

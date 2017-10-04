@@ -88,7 +88,7 @@ function post_type_work()
         'rewrite' => array('slug' => 'work'),
         'has_archive' => false,
         'menu_position' => 5,
-        'menu_icon' => 'dashicons-format-gallery',
+        'menu_icon' => 'dashicons-portfolio',
         'taxonomies' => array('post_tag', 'category'),
         'supports' => array('title'),
     );
@@ -122,7 +122,7 @@ function post_type_client()
         'rewrite' => array('slug' => 'members'),
         'has_archive' => false,
         'menu_position' => 5,
-        'menu_icon' => 'dashicons-format-gallery',
+        'menu_icon' => 'dashicons-admin-users',
         //'menu_icon' => get_stylesheet_directory_uri() . '/functions/panel/images/catchinternet-small.png',
         'taxonomies'          => array( '' ),
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),

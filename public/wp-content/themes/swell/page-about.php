@@ -1,21 +1,13 @@
 <?php get_header(); ?>
 <div class="about-1">
     <div class="panel">
-      <?php
-
-$fields = get_fields();
-if( $fields ): ?>
-	<ul>
-		<?php foreach( $fields as $name => $value ): ?>
-<!-- 			<li><b><?php echo $name; ?></b> <?php echo $value; ?></li>
- -->		<?php endforeach; ?>
-	</ul>
-<?php endif; ?>
         <div class="people-image-block">
             <div class="main-block">
               <?php
               $featured_image = get_field('featured_image');
               $featured_thumb = get_field('featured_thumbnail');
+              $featured_heading = get_field('featured_heading');
+              $featured_body = get_field('featured_body');
               $clients = get_field('clients');
               $client_position = (int)get_field('client_cta_position') - 1;
               $client_cta = get_field('client_cta');
@@ -31,8 +23,7 @@ if( $fields ): ?>
                 $loop = new WP_Query( $args );
                 $i = 2;
                 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                  <?php $thumb = get_field('thumbnail'); echo "<pre>";?>
-                <img data-img-<?php echo $i; ?> src="<?php echo $thumb['url']; ?>" alt="<?php echo the_title(); ?>" />
+                <img data-img-<?php echo $i; ?> src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" />
                 <?php $i++; endwhile; ?>
             </div>
             <div class="thumb-row">
@@ -42,9 +33,10 @@ if( $fields ): ?>
                 <?php
                 $i = 2;
                 while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <?php $thumb = get_field('thumbnail');?>
                 <div data-trigger-<?php echo $i; ?> class="thumb-item">
                     <a href="#">
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" />
+                        <img src="<?php echo $thumb['url']; ?>" alt="<?php echo the_title(); ?>" />
                         <span class="people-text"><?php echo the_title(); ?><em><?php the_field('job_title'); ?></em></span>
                     </a>
                 </div>
@@ -53,9 +45,9 @@ if( $fields ): ?>
         </div>
         <div class="people-content-block">
             <div data-position-1 class="people-content active">
-              <h3><?php the_field('headline'); ?></h3>
+              <h3><?php echo $featured_heading; ?></h3>
               </br>
-              <p><?php the_field('body'); ?></p>
+              <p><?php echo $featured_body; ?></p>
             </div>
             <?php
             $i = 2;

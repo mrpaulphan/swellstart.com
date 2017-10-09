@@ -131,6 +131,40 @@ function post_type_client()
 }
 add_action('init', 'post_type_client');
 
+
+function post_type_ad()
+{
+    $labels = array(
+        'name' => 'Ads',
+        'singular_name' => 'Ad',
+        'menu_name' => 'Ad',
+        'name_admin_bar' => 'Ad',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add an ad block',
+        'new_item' => 'New ad',
+        'edit_item' => 'Edit ad',
+        'view_item' => 'View ad',
+        'all_items' => 'All ads',
+        'search_items' => 'Search ads',
+        'parent_item_colon' => 'Parent ads:',
+        'not_found' => 'No projects found.',
+        'not_found_in_trash' => 'No projects found in Trash.',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'rewrite' => array('slug' => 'ads'),
+        'has_archive' => false,
+        'menu_position' => 4,
+        'menu_icon' => 'dashicons-admin-users',
+        'taxonomies'          => array( '' ),
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),
+    );
+    register_post_type('ads', $args);
+}
+add_action('init', 'post_type_ad');
+
 /*
  * Allow svg files
  */

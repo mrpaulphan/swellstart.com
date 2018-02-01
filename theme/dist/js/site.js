@@ -3,14 +3,14 @@
 -------------------------------------------*/
 
 
-equalheight = function(container) {
+equalheight = function (container) {
 
   var currentTallest = 0,
     currentRowStart = 0,
     rowDivs = [],
     $el,
     topPosition = 0;
-  $(container).each(function() {
+  $(container).each(function () {
 
     $el = $(this);
     $($el).height('auto');
@@ -34,17 +34,17 @@ equalheight = function(container) {
   });
 };
 
-$(window).load(function() {
+$(window).load(function () {
   equalheight('.home-grid .box, .layout-resources .col');
 });
 
 
-$(window).resize(function() {
+$(window).resize(function () {
   equalheight('.home-grid .box, .layout-resources .col');
 });
 
 
-$(".controls").click(function() {
+$(".controls").click(function () {
   $("body").toggleClass("blue");
   console.log("click");
 
@@ -53,13 +53,13 @@ $(".controls").click(function() {
 
 
 
-$(".filter-client .dropdown-trigger").click(function() {
+$(".filter-client .dropdown-trigger").click(function () {
   console.log("test");
   $(".filter-client .filters").slideToggle();
 });
 
 
-$(".filter-category .dropdown-trigger").click(function() {
+$(".filter-category .dropdown-trigger").click(function () {
   $(".filter-category .filters").slideToggle();
 });
 
@@ -69,7 +69,7 @@ $(".filter-category .dropdown-trigger").click(function() {
 
 // });
 
-$("[data-trigger-research]").click(function() {
+$("[data-trigger-research]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
   $("[data-research]").slideToggle();
@@ -77,7 +77,7 @@ $("[data-trigger-research]").click(function() {
 
 });
 
-$("[data-trigger-planning]").click(function() {
+$("[data-trigger-planning]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -85,7 +85,7 @@ $("[data-trigger-planning]").click(function() {
 
 });
 
-$("[data-trigger-branding]").click(function() {
+$("[data-trigger-branding]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -94,7 +94,7 @@ $("[data-trigger-branding]").click(function() {
 });
 
 
-$("[data-trigger-advertising]").click(function() {
+$("[data-trigger-advertising]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -103,7 +103,7 @@ $("[data-trigger-advertising]").click(function() {
 });
 
 
-$("[data-trigger-collateral]").click(function() {
+$("[data-trigger-collateral]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -112,7 +112,7 @@ $("[data-trigger-collateral]").click(function() {
 });
 
 
-$("[data-trigger-measurement]").click(function() {
+$("[data-trigger-measurement]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -121,7 +121,7 @@ $("[data-trigger-measurement]").click(function() {
 });
 
 
-$("[data-trigger-website]").click(function() {
+$("[data-trigger-website]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -129,7 +129,7 @@ $("[data-trigger-website]").click(function() {
 
 });
 
-$("[data-trigger-content]").click(function() {
+$("[data-trigger-content]").click(function () {
   $(".filter-category .filters").slideUp();
   $(".filter-content").slideUp();
 
@@ -138,7 +138,7 @@ $("[data-trigger-content]").click(function() {
 });
 
 
-$("[data-trigger-1] a").click(function() {
+$("[data-trigger-1] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-1]").addClass("active");
 
@@ -148,7 +148,7 @@ $("[data-trigger-1] a").click(function() {
   $("[data-position-1]").show();
 });
 
-$("[data-trigger-2] a").click(function() {
+$("[data-trigger-2] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-2]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -157,7 +157,7 @@ $("[data-trigger-2] a").click(function() {
   $("[data-position-2]").show();
 });
 
-$("[data-trigger-3] a").click(function() {
+$("[data-trigger-3] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-3]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -167,7 +167,7 @@ $("[data-trigger-3] a").click(function() {
 });
 
 
-$("[data-trigger-4] a").click(function() {
+$("[data-trigger-4] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-4]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -176,7 +176,7 @@ $("[data-trigger-4] a").click(function() {
   $("[data-position-4]").show();
 });
 
-$("[data-trigger-5] a").click(function() {
+$("[data-trigger-5] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-5]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -185,7 +185,7 @@ $("[data-trigger-5] a").click(function() {
   $("[data-position-5]").show();
 });
 
-$("[data-trigger-6] a").click(function() {
+$("[data-trigger-6] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-6]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -195,7 +195,7 @@ $("[data-trigger-6] a").click(function() {
 });
 
 
-$(".work-list p").click(function() {
+$(".work-list p").click(function () {
   console.log($(this).next(".filter-content"));
   $(this).next(".filter-content").slideToggle();
   $(this).toggleClass("active");
@@ -208,48 +208,63 @@ function explode() {
 }
 setTimeout(explode, 2000);
 
-jQuery(document).ready(function() {
-  var locations = [
-    ['SWELL HQ', 39.9508394, -75.1584951, 5],
-    ['SWELL HQ2', 40.267077, -76.887204, 5],
-  ];
+$(document).ready(function () {
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: new google.maps.LatLng(),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+  if ($('#map').length) {
+    var locations = new Array();
 
-  var infowindow = new google.maps.InfoWindow();
+    // Loop through cms addresses and add to locations
+    $('.js-address-fields').each(function () {
+      var mapTitle = $(this).attr('data-map-title');
+      var mapLatitude = Number($(this).attr('data-map-latitude'));
+      var mapLongitude = Number($(this).attr('data-map-longitude'));
 
-  var marker, i;
-  var markers = new Array();
+      locations.push([mapTitle, mapLatitude, mapLongitude]);
+    });
+    // var locations = [
+    //   ['SWELL HQ', 39.9508394, -75.1584951, 10],
+    //   ['SWELL HQ2', 40.267077, -76.887204, 5],
+    // ];
 
-  for (i = 0; i < locations.length; i++) {
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 7,
+      //  center: new google.maps.LatLng(),
+      center: new google.maps.LatLng(locations[1][1], locations[1][2]),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    markers.push(marker);
+    var infowindow = new google.maps.InfoWindow();
 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      return function() {
-        infowindow.setContent(locations[i][0]);
-        infowindow.open(map, marker);
-      }
-    })(marker, i));
-  }
+    var marker, i;
+    var markers = new Array();
 
-  function AutoCenter() {
-    //  Create a new viewpoint bound
-    var bounds = new google.maps.LatLngBounds();
-    //  Go through each...
-    $.each(markers, function(index, marker) {
-      bounds.extend(marker.position);
-    });
-    //  Fit these bounds to the map
-    map.fitBounds(bounds);
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        return function () {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+
+    function AutoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      $.each(markers, function (index, marker) {
+        bounds.extend(marker.position);
+      });
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    //  AutoCenter();
   }
-  AutoCenter();
 });
+

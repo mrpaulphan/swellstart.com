@@ -6,20 +6,60 @@ https://impactsix.com/
 
 *************************************************
 */
-@import 'general.animate';
-@import 'general.original';
+
+@import "general.animate";
+@import "general.original";
+
 /**
  * Impact Six Overwrite Styles
  */
+
+body,
+html {
+	height: 100%;
+}
+
 body {
-  position: relative;
+	position: relative;
 }
 
 nav {
-  z-index: 1;
-  top: -175px;
+	z-index: 3;
+	top: -175px;
+}
+
+.connect-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
 }
 
 .work-hero:before {
-  background-image: url('/wp-content/uploads/2017/09/work-landing-seal.png');
+	background-image: url("/wp-content/uploads/2017/09/work-landing-seal.png");
+}
+
+.people-image-block .ben-thumb.active:after {
+	content: url("/wp-content/uploads/2017/09/people-block-on-state.png");
+}
+
+.people-image-block .active .people-text:after,
+.people-image-block .thumb-item:hover .people-text:after {
+	content: url("/wp-content/uploads/2017/09/people-block-on-state-up.png");
+	top: -23px;
+}
+
+.filter-outer-wrap {
+	z-index: 1;
+}
+.about-3 .col-2 p + p {
+	margin-top: 30px;
+}
+#map {
+	top: 0;
+	z-index: 1;
+}
+figure img {
+	margin: 0 auto;
 }

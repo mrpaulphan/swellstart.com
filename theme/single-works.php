@@ -8,7 +8,7 @@
                             <a href="#" class="dropdown-trigger">Filter by category<img src="/wp-content/uploads/2017/09/dropdown-trigger.png" /></a>
                             <ul class="filters">
                               <?php $categories = get_categories(); ?>
-                              <?php foreach ($categories as $category):?>
+                              <?php foreach ($categories as $category): ?>
                                 <li><a data-trigger-filter="<?php echo $category->term_id; ?>" href="#"><?php echo esc_html($category->name) ?></a></li>
                                <?php endforeach; ?>
                             </ul>

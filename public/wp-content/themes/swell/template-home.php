@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page
+Template Name: Home
 */
 ?>
 <?php get_header(); ?>
@@ -10,28 +10,28 @@ $works = get_field('featured_work');
 
 <div class="home-content">
   <?php $post_objects = get_field('featured_work');
-  if( $post_objects ):  ?>
+  if ($post_objects):  ?>
       <ul>
-        <?php foreach($post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+        <?php foreach ($post_objects as $post): // variable must be called $post (IMPORTANT)?>
           <?php setup_postdata($post); ?>
           <?php
           if ($post->post_type == 'ads') {
-            $image = get_field('image');
-            $url = get_field('url');
-            $figure_class = '';
-            $display = get_field('display');
-            if ($display == 'all') {
-              $display_class = '';
-            } elseif($display == 'mobile') {
-              $display_class = 'mobile-only';
-            } elseif($display == 'desktop') {
-              $display_class = 'desktop-only';
-            }
+              $image = get_field('image');
+              $url = get_field('url');
+              $figure_class = '';
+              $display = get_field('display');
+              if ($display == 'all') {
+                  $display_class = '';
+              } elseif ($display == 'mobile') {
+                  $display_class = 'mobile-only';
+              } elseif ($display == 'desktop') {
+                  $display_class = 'desktop-only';
+              }
           } else {
-            $image = get_field('thumbnail_image');
-            $url = get_permalink();
-            $figure_class = 'effect-layla ';
-            $display_class = '';
+              $image = get_field('thumbnail_image');
+              $url = get_permalink();
+              $figure_class = 'effect-layla ';
+              $display_class = '';
           }
            ?>
           <li class="<?php echo $display_class; ?>">

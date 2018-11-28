@@ -6,6 +6,5 @@
 <link href="http://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6725274/631868/css/fonts.css">
 <!-- generics -->
-
-
-
+<?php $fav_icon = get_field('fav_icon', 'options')['url']; ?> 
+<link rel="icon" type="image/png"  href="<?php echo $fav_icon; ?>" />

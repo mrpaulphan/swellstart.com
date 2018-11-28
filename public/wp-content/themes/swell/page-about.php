@@ -15,6 +15,8 @@
               $bottom_body = get_field('featured_body_2');
               $cta_url = get_field('featured_cta_url');
               $cta_label = get_field('featured_cta_label');
+              $show_clients = get_field('show_clients');
+              $show_featured_section = get_field('show_featured_section');
               ?>
 
                 <img data-img-1 class="active" src="<?php echo $featured_image['url']; ?>" alt="Well done is better than well said" />
@@ -63,6 +65,7 @@
         </div>
     </div>
 </div>
+<?php if($show_clients): ?>
 <div class="about-2">
     <div class="panel">
         <h2>Clients</h2>
@@ -89,6 +92,8 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
+<?php if($show_featured_section): ?>
 <div class="about-3">
     <div class="panel">
         <div class="col-1">
@@ -100,5 +105,6 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

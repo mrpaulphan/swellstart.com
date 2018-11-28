@@ -50,6 +50,7 @@
               <h3><?php echo $featured_heading; ?></h3>
               </br>
               <p><?php echo $featured_body; ?></p>
+              <b><a href="work/">See SWELL's work</a></b>
             </div>
             <?php
             $i = 2;

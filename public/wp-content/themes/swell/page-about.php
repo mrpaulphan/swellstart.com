@@ -4,27 +4,27 @@
         <div class="people-image-block">
             <div class="main-block">
               <?php
-              $featured_image = get_field('featured_image');
-              $featured_thumb = get_field('featured_thumbnail');
-              $featured_heading = get_field('featured_heading');
-              $featured_body = get_field('featured_body');
-              $clients = get_field('clients');
-              $client_position = (int)get_field('client_cta_position') - 1;
-              $client_cta = get_field('client_cta');
-              $featured_image_2 = get_field('featured_image_2');
-              $bottom_body = get_field('featured_body_2');
-              $cta_url = get_field('featured_cta_url');
-              $cta_label = get_field('featured_cta_label');
-              $show_clients = get_field('show_clients');
-              $show_featured_section = get_field('show_featured_section');
+                $featured_image = get_field('featured_image');
+                $featured_thumb = get_field('featured_thumbnail');
+                $featured_heading = get_field('featured_heading');
+                $featured_body = get_field('featured_body');
+                $clients = get_field('clients');
+                $client_position = (int)get_field('client_cta_position') - 1;
+                $client_cta = get_field('client_cta');
+                $featured_image_2 = get_field('featured_image_2');
+                $bottom_body = get_field('featured_body_2');
+                $cta_url = get_field('featured_cta_url');
+                $cta_label = get_field('featured_cta_label');
+                $show_clients = get_field('show_clients');
+                $show_featured_section = get_field('show_featured_section');
               ?>
 
                 <img data-img-1 class="active" src="<?php echo $featured_image['url']; ?>" alt="Well done is better than well said" />
                 <?php
-                $args = array( 'post_type' => 'teams', 'posts_per_page' => -1 );
-                $loop = new WP_Query( $args );
+                $args = ['post_type' => 'teams', 'posts_per_page' => -1];
+                $loop = new WP_Query($args);
                 $i = 2;
-                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                while ($loop->have_posts()) : $loop->the_post(); ?>
                 <img data-img-<?php echo $i; ?> src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo the_title(); ?>" />
                 <?php $i++; endwhile; ?>
             </div>
@@ -34,7 +34,7 @@
                 </div>
                 <?php
                 $i = 2;
-                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                while ($loop->have_posts()) : $loop->the_post(); ?>
                 <?php $thumb = get_field('thumbnail');?>
                 <div data-trigger-<?php echo $i; ?> class="thumb-item">
                     <a href="#">
@@ -54,7 +54,7 @@
             </div>
             <?php
             $i = 2;
-            while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            while ($loop->have_posts()) : $loop->the_post(); ?>
             <div data-position-<?php echo $i; ?> class="people-content">
                 <h3><?php the_field('headline'); ?></h3>
                 </br>
@@ -66,7 +66,7 @@
         </div>
     </div>
 </div>
-<?php if($show_clients): ?>
+<?php if ($show_clients): ?>
 <div class="about-2">
     <div class="panel">
         <h2>Clients</h2>
@@ -74,16 +74,16 @@
           <?php
           $clients_array = [];
           foreach ($clients as $key => $value) {
-              if ($key == $client_position ) {
-                $key++;
-                array_splice($clients_array, $client_position, 0, '');
-              } elseif( $key > $client_position ) {
-                $key++;
+              if ($key == $client_position) {
+                  $key++;
+                  array_splice($clients_array, $client_position, 0, '');
+              } elseif ($key > $client_position) {
+                  $key++;
               }
               $clients_array[$key] = $value;
           }
            ?>
-            <?php foreach( $clients_array as $key => $image ): ?>
+            <?php foreach ($clients_array as $key => $image): ?>
               <?php if ($key == $client_position): ?>
                 <div class="hey-look"><?php echo $client_cta; ?></div>
                 <?php else: ?>
@@ -94,7 +94,7 @@
     </div>
 </div>
 <?php endif; ?>
-<?php if($show_featured_section): ?>
+<?php if ($show_featured_section): ?>
 <div class="about-3">
     <div class="panel">
         <div class="col-1">

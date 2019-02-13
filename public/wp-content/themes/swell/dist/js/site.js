@@ -138,6 +138,27 @@ $("[data-trigger-content]").click(function () {
 });
 
 
+// var trigger = $("[data-trigger]");
+
+// // User clicked on button
+// trigger.click(function () {
+//   // Remove all active classes for both the trigger and panel
+//   $('[data-trigger]').removeClass('active');
+//   $('[data-trigger-panel]').removeClass('active');
+
+//   // Get the attr value of the clicked item
+//   var triggerId = $(this).attr('data-trigger');
+//   // Add active class to the button you just clicked
+//   $(this).addClass('active');
+
+//   // Find the panel with the same value
+//   var panel = $('[data-trigger-panel="'+ triggerId +'"]');
+//   // Add class to the panel with the same value as the button you just clicked
+//   panel.addClass('active')
+// });
+
+
+
 $("[data-trigger-1] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-1]").addClass("active");
@@ -201,7 +222,7 @@ $("[data-trigger-7] a").click(function () {
   $(".people-content").hide();
   $("[data-position-7]").show();
 });
-$("[data-trigger-9] a").click(function () {
+$("[data-trigger-8] a").click(function () {
   $(".thumb-item").removeClass("active");
   $("[data-trigger-8]").addClass("active");
   $(".main-block img").removeClass("active").hide();
@@ -225,6 +246,46 @@ $("[data-trigger-10] a").click(function () {
   $("[data-img-10]").show().addClass("active");
   $(".people-content").hide();
   $("[data-position-10]").show();
+});
+$("[data-trigger-11] a").click(function () {
+  $(".thumb-item").removeClass("active");
+  $("[data-trigger-11]").addClass("active");
+  $(".main-block img").removeClass("active").hide();
+  $("[data-img-11]").show().addClass("active");
+  $(".people-content").hide();
+  $("[data-position-11]").show();
+});
+$("[data-trigger-12] a").click(function () {
+  $(".thumb-item").removeClass("active");
+  $("[data-trigger-12]").addClass("active");
+  $(".main-block img").removeClass("active").hide();
+  $("[data-img-12]").show().addClass("active");
+  $(".people-content").hide();
+  $("[data-position-12]").show();
+});
+$("[data-trigger-13] a").click(function () {
+  $(".thumb-item").removeClass("active");
+  $("[data-trigger-13]").addClass("active");
+  $(".main-block img").removeClass("active").hide();
+  $("[data-img-13]").show().addClass("active");
+  $(".people-content").hide();
+  $("[data-position-13]").show();
+});
+$("[data-trigger-14] a").click(function () {
+  $(".thumb-item").removeClass("active");
+  $("[data-trigger-14]").addClass("active");
+  $(".main-block img").removeClass("active").hide();
+  $("[data-img-14]").show().addClass("active");
+  $(".people-content").hide();
+  $("[data-position-14]").show();
+});
+$("[data-trigger-15] a").click(function () {
+  $(".thumb-item").removeClass("active");
+  $("[data-trigger-15]").addClass("active");
+  $(".main-block img").removeClass("active").hide();
+  $("[data-img-15]").show().addClass("active");
+  $(".people-content").hide();
+  $("[data-position-15]").show();
 });
 
 
